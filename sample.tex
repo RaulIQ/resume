@@ -19,7 +19,7 @@
 %% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/simpleicons for full list of symbols.
 
 % Change the page layout if you need to
-\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+\geometry{left=1.25cm,right=1.25cm,top=0.5cm,bottom=1.5cm,columnsep=1.2cm}
 
 % The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
@@ -140,6 +140,7 @@
 % break across pages if things get too long.
 \begin{paracol}{2}
 
+
 \cvsection{Проекты}
 
 % может быть обьеденить это все в организацию mik32-rs
@@ -162,27 +163,41 @@ HAL предоставляет высокоуровневую аппаратну
 \end{itemize}
 
 \cvsection{Open Source}
+\cvevent{Pull Requests в Embassy}{Добавил новые функциональности в библиотеку с \textbf{9} тысячами звёзд.}{}{}
 \begin{itemize}
-    \item \cvevent{Pull Request в Embassy}{}{}{}
-Добавил новую функциональность в библиотеку с \textbf{7} тысячами звёзд.
+  \item \github{embassy-rs/embassy/pull/4232}
+  \item \github{embassy-rs/embassy/pull/4726}
+\end{itemize}
 
-\github{embassy-rs/embassy/pull/4232}
-
-    \item \cvevent{Форк spi-memory}{}{}{}
-Создал форк архивного репозитория spi-memory, обновил зависимость embedded‑hal до актуальной версии и внедрил асинхронные API для чтения и записи.
-
-\github{RaulIQ/spi-memory-async}
+\cvevent{Контрибьютор open-source библиотек}{}{}{}
+\begin{itemize}
+  \item \github{wboayue/fusion-ahrs}
+  \item \github{sulami/dshot-frame}
+  \item \github{jettify/uf-ahrs}
 \end{itemize}
 
 \cvsection{Опыт Работы}
 
-\cvevent{Лаборант Центра БПЛА}{МТУСИ}{Март 2024 — настоящее время}{}
+\cvevent{Программист встраиваемых систем}{ЮВС Авиа (концерн "Калашников")}{Сентябрь 2025 — настоящее время}{}
+
 \begin{itemize}
-  \item Разработал реализацию протокола DSHOT для моторов 
+  \item Реализовал ППРЧ на Wi-Fi адаптерах.
+  \item Разработал UDP-управление дроном (Raspberry Pi <-> ПК) с режимами SBUS и MAVLink.
+  \item Реализовал Bidirectional DSHOT для считывания оборотов моторов.
   
-  пример кода работы с моторами: \github{RaulIQ/waveform_example}
-  \item Спроектировал и внедрил два режима полёта — Acro и Stab — с использованием продвинутых PID‑регуляторов, цифровых фильтров и кватернионного представления ориентации, что позволило повысить точность управления и устойчивость аппарата.
-  \item Организовал надёжную систему записи телеметрии («чёрный ящик») на внешнюю SPI‑флеш, разработав схему буферизации данных.
+  Проект: \github{RaulIQ/bit-banging-bidir-dshot}
+\end{itemize}
+
+\cvevent{Лаборант Центра БПЛА}{МТУСИ}{Март 2024 — Сентябрь 2025}{}
+\begin{itemize}
+  \item Реализовал протокол DSHOT для управления моторами.
+  
+  Пример кода: \github{RaulIQ/waveform_example}
+  \item Внедрил режимы полёта Acro и Stab на базе PID-регуляторов, цифровых фильтров и кватернионов.
+  \item Реализовал запись телеметрии ("черный ящик") на внешнюю SPI-флеш с буферизацией.
+  Сделал форк архива spi-memory и внедрил асинхронные API для чтения и записи.
+  
+  \github{RaulIQ/spi-memory-async}
 \end{itemize}
 
 \medskip
@@ -197,7 +212,7 @@ HAL предоставляет высокоуровневую аппаратну
 \cvsection{Образование}
 
 \cvevent{Высшое образование}{МТУСИ, Бакалавриат}{Сентябрь 2022 -- Июнь 2026}{}
-Третий курс направления: "Информатика и вычислительная техника"
+Четвёртый курс направления: "Информатика и вычислительная техника"
 
 \cvsection{Навыки}
 \cvevent{Области специализации}{}{}{}
@@ -221,8 +236,13 @@ HAL предоставляет высокоуровневую аппаратну
 
 
 
-\cvsection{Публичная \newline \smallskip активность}
+\cvsection{Профессиональная \newline \smallskip активность}
+
 \begin{itemize}
+    \item Участвавал в студкемпе "Алиса и Умные устройства Яндекса"
+    \item Получал стипендию Selectel Career Wave:
+    \href{https://files.selectel.ru/docs/ru/careerwave_scholarship_finalists.pdf}{Список финалистов}
+    
     \item \href{https://t.me/it_bash_forum/24}{Выступление на форуме IT-Bash}
 \end{itemize}
 
