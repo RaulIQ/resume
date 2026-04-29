@@ -1,0 +1,25 @@
+## LaTeX intermediate/build artifacts
+*.aux
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+## Bibliography generated files
+*.bbl
+
+## Latexmk cache
+*.xdv
+*.nav
+*.snm
+
+## Generated PDF and PDF/A metadata
+*.pdf
+pdfa.xmpi
