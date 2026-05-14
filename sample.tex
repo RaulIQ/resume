@@ -106,7 +106,7 @@
   % Not all of these are required!
   \email{raulalimbekov@gmail.com}
   \phone{+7-987-626-7271}
-  \location{Москва, Россия}
+  \location{Казань, Россия}
   \github{RaulIQ}
   \printinfo{\faTelegram}{@Raul\_no\_Rules}[https://t.me/Raul_no_Rules]
 
@@ -136,32 +136,35 @@
 % \AtBeginEnvironment{itemize}{\small}
 
 %% Set the left/right column width ratio to 6:4.
-\columnratio{0.6}
+\columnratio{0.65}
 
 % Start a 2-column paracol. Both the left and right columns will automatically
 % break across pages if things get too long.
 \begin{paracol}{2}
 
 
-\cvsection{Проекты}
+\cvsection{Опыт Работы}
 
-% может быть обьеденить это все в организацию mik32-rs
-
-\cvevent{mik32-rs}{Набор инструментов для разработки на Rust под микроконтроллеры серии Mik32.}{}{}
+\cvevent{Программист встраиваемых систем}{ЮВС Авиа (концерн "Калашников")}{Сентябрь 2025 — настоящее время}{}
 
 \begin{itemize}
-\item \github{mik32-rs/mik32-rt}
+  \item Реализовал \textbf{ППРЧ} на Wi-Fi адаптерах.
+  \item Реализовал \textbf{Bidirectional DSHOT} для считывания оборотов моторов.
+  
+  Проект: \github{RaulIQ/bit-banging-bidir-dshot}
+  \item Реализовал мост с аппаратным шифрованием MAVLink (AES-128).
+\end{itemize}
 
-Этот крейт содержит все необходимые компоненты для создания приложения no\_std (бинарный крейт), предназначенного для микроконтроллера \textbf{Mik32 Amur}. 
-
-\item \github{mik32-rs/mik32v2-pac}
-
-API периферийного доступа для микроконтроллера mik32v2
-
-\item \github{mik32-rs/mik32-hal}
-
-HAL предоставляет высокоуровневую аппаратную абстракцию, опираясь на трейты \textbf{embedded‑hal} и следуя канонам разработки Rust HAL.
-
+\cvevent{Лаборант Центра БПЛА}{МТУСИ}{Март 2024 — Сентябрь 2025}{}
+\begin{itemize}
+  \item Реализовал протокол \textbf{DSHOT} для управления моторами.
+  
+  Пример кода: \github{RaulIQ/waveform_example}
+  \item Внедрил режимы полёта Acro и Stab на базе PID-регуляторов, цифровых фильтров и кватернионов.
+  \item Реализовал запись телеметрии ("черный ящик") на внешнюю SPI-flash с собственным алгоритмом сериализации данных.
+  Сделал форк архива spi-memory и внедрил асинхронные API для чтения и записи.
+  
+  \github{RaulIQ/spi-memory-async}
 \end{itemize}
 
 \cvsection{Open Source}
@@ -178,27 +181,25 @@ HAL предоставляет высокоуровневую аппаратну
   \item \github{jettify/uf-ahrs}
 \end{itemize}
 
-\cvsection{Опыт Работы}
+\cvsection{Проекты}
 
-\cvevent{Программист встраиваемых систем}{ЮВС Авиа (концерн "Калашников")}{Сентябрь 2025 — настоящее время}{}
+% может быть обьеденить это все в организацию mik32-rs
+
+\cvevent{mik32-rs}{Набор инструментов для разработки на Rust под микроконтроллеры серии Mik32.}{}{}
 
 \begin{itemize}
-  \item Реализовал \textbf{ППРЧ} на Wi-Fi адаптерах.
-  \item Реализовал \textbf{Bidirectional DSHOT} для считывания оборотов моторов.
-  
-  Проект: \github{RaulIQ/bit-banging-bidir-dshot}
-\end{itemize}
+\item \github{mik32-rs/mik32-rt}
 
-\cvevent{Лаборант Центра БПЛА}{МТУСИ}{Март 2024 — Сентябрь 2025}{}
-\begin{itemize}
-  \item Реализовал протокол \textbf{DSHOT} для управления моторами.
-  
-  Пример кода: \github{RaulIQ/waveform_example}
-  \item Внедрил режимы полёта Acro и Stab на базе PID-регуляторов, цифровых фильтров и кватернионов.
-  \item Реализовал запись телеметрии ("черный ящик") на внешнюю SPI-flash с собственным алгоритмом сериализации данных.
-  Сделал форк архива spi-memory и внедрил асинхронные API для чтения и записи.
-  
-  \github{RaulIQ/spi-memory-async}
+Стартовый код и минимальный runtime для \textbf{Mik32 Amur}: даёт возможность писать и собирать прошивки на \textbf{Rust} под этот микроконтроллер.
+
+\item \github{mik32-rs/mik32v2-pac}
+
+API периферийного доступа для микроконтроллера mik32v2
+
+\item \github{mik32-rs/mik32-hal}
+
+Предоставляет аппаратную абстракцию, опираясь на трейты \newline \smallskip \textbf{embedded‑hal} и следуя канонам разработки Rust HAL.
+
 \end{itemize}
 
 \medskip
@@ -220,17 +221,11 @@ HAL предоставляет высокоуровневую аппаратну
 
 
 \cvsection{Навыки}
-\cvevent{Области специализации}{}{}{}
-\cvtag{Embedded Systems} \cvtag{Rust} \cvtag{Bare-metal} \cvtag{STM32(F4/F7 серии)}
-
-
-\divider
-\cvevent{ Имел опыт работы}{}{}{}
-\begin{itemize}
-    \item \cvtag{C/C++} - \cvtag{STM32 Hal} \cvtag{ESP-IDF} \cvtag{mongoose lib}
-    \item \cvtag{Debugging} - \cvtag{JTAG/SWD} \cvtag{GDB} \cvtag{OpenOCD}
-    \item \cvtag{Protocols} - \cvtag{DSHOT} \cvtag{SBUS} \cvtag{MAVLink} \cvtag{UART/SPI/I2C}
-\end{itemize}
+\textbf{Языки:} \cvtag{Rust} \cvtag{C/C++} \cvtag{Python} \\
+\textbf{Встраиваемые платформы:} \cvtag{STM32} \cvtag{ESP32} \cvtag{Mik32} \cvtag{RPi}\\
+\textbf{Cреды выполнения:} \cvtag{Bare-metal} \cvtag{FreeRTOS} \cvtag{Embassy (async)} \newline \cvtag{Embedded Linux} \\
+\textbf{Коммуникации:} \cvtag{UART/SPI/I2C} \cvtag{SBUS/DSHOT} \cvtag{MAVLink} \\
+\textbf{Отладка и инструменты:} \cvtag{GDB} \cvtag{OpenOCD} \cvtag{JTAG/SWD} \cvtag{осциллограф} \cvtag{лог. анализатор} \\
 
 
 
@@ -244,7 +239,7 @@ HAL предоставляет высокоуровневую аппаратну
     \item \href{https://t.me/it_bash_forum/24}{Выступление на форуме IT-Bash}
 \end{itemize}
 
-\cvsection{Интересы и увле- \newline \smallskip чения}
+\cvsection{Интересы и \newline \smallskip увлечения}
 \begin{itemize}
   \item Увлекаюсь единоборствами: занимаюсь грэпплингом и бразильским джиу-джитсу в клубе \href{https://combatgym.ru/}{Combat Gym}.
 \end{itemize}
