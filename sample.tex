@@ -143,63 +143,55 @@
 \begin{paracol}{2}
 
 
-\cvsection{Опыт Работы}
+\cvsection{Опыт работы}
 
-\cvevent{Программист встраиваемых систем}{ЮВС Авиа (концерн "Калашников")}{Сентябрь 2025 — настоящее время}{}
+\cvevent{Программист встраиваемых систем}{ЮВС Авиа (концерн «Калашников»)}{Сентябрь 2025 — настоящее время}{}
 
 \begin{itemize}
-  \item Реализовал \textbf{ППРЧ} на Wi-Fi адаптерах.
-  \item Реализовал \textbf{Bidirectional DSHOT} для считывания оборотов моторов.
-  
-  Проект: \github{RaulIQ/bit-banging-bidir-dshot}
-  \item Реализовал мост с аппаратным шифрованием MAVLink (AES-128).
+  \item Разработал \textbf{ППРЧ} для Wi-Fi-канала на Raspberry Pi (RTL8812EU): 10 перестроек частоты в секунду для устойчивости к РЭБ.
+  \item Реализовал \textbf{Bidirectional DSHOT} на STM32F7: чтение оборотов моторов без отдельного датчика.
+
+  \github{RaulIQ/bit-banging-bidir-dshot}
+  \item Разработал мост MAVLink на ESP32 с аппаратным шифрованием \textbf{AES-128}.
 \end{itemize}
 
 \cvevent{Лаборант Центра БПЛА}{МТУСИ}{Март 2024 — Сентябрь 2025}{}
 \begin{itemize}
   \item Реализовал протокол \textbf{DSHOT} для управления моторами.
-  
-  Пример кода: \github{RaulIQ/waveform_example}
-  \item Внедрил режимы полёта Acro и Stab на базе PID-регуляторов, цифровых фильтров и кватернионов.
-  \item Реализовал запись телеметрии ("черный ящик") на внешнюю SPI-flash с собственным алгоритмом сериализации данных.
-  Сделал форк архива spi-memory и внедрил асинхронные API для чтения и записи.
-  
+
+  \github{RaulIQ/waveform_example}
+  \item В команде писал полётную прошивку с нуля: режимы Acro и Stab на \textbf{PID-регуляторах}, цифровых фильтрах и кватернионах.
+  \item Спроектировал «чёрный ящик»: запись телеметрии на SPI-flash в собственном формате. Добавил async API в форк spi-memory, чтобы запись не блокировала другие задачи.
+
   \github{RaulIQ/spi-memory-async}
 \end{itemize}
 
 \cvsection{Open Source}
-\cvevent{Pull Requests в Embassy}{Добавил новые функциональности в библиотеку с \textbf{9} тысячами звёзд.}{}{}
+\cvevent{Контрибьютор Embassy}{Async-фреймворк для embedded Rust, почти 10 тыс. звёзд}{}{}
 \begin{itemize}
-  \item \github{embassy-rs/embassy/pull/4232}
-  \item \github{embassy-rs/embassy/pull/4726}
+  \item Многоканальный ШИМ через DMA burst (принят): \newline \github{embassy-rs/embassy/pull/4232}
+  \item Захват сигнала таймера через DMA, например для DShot (принят): \newline \github{embassy-rs/embassy/pull/4726}
 \end{itemize}
 
 \cvevent{Контрибьютор open-source библиотек}{}{}{}
-\begin{itemize}
-  \item \github{wboayue/fusion-ahrs}
-  \item \github{sulami/dshot-frame}
-  \item \github{jettify/uf-ahrs}
-\end{itemize}
+\github{wboayue/fusion-ahrs} \github{sulami/dshot-frame} \newline \github{jettify/uf-ahrs}
 
 \cvsection{Проекты}
 
-% может быть обьеденить это все в организацию mik32-rs
-
-\cvevent{mik32-rs}{Набор инструментов для разработки на Rust под микроконтроллеры серии Mik32.}{}{}
+\cvevent{mik32-rs}{Первая поддержка Rust для российского RISC-V микроконтроллера MIK32 «Амур»}{}{}
 
 \begin{itemize}
 \item \github{mik32-rs/mik32-rt}
 
-Стартовый код и минимальный runtime для \textbf{Mik32 Amur}: даёт возможность писать и собирать прошивки на \textbf{Rust} под этот микроконтроллер.
+Стартовый код и минимальный runtime: позволяет писать и собирать прошивки для MIK32 на \textbf{Rust}.
 
 \item \github{mik32-rs/mik32v2-pac}
 
-API периферийного доступа для микроконтроллера mik32v2
+API доступа к периферии (PAC) для MIK32v2.
 
 \item \github{mik32-rs/mik32-hal}
 
-Предоставляет аппаратную абстракцию, опираясь на трейты \newline \smallskip \textbf{embedded-hal} и следуя канонам разработки Rust HAL.
-\
+Аппаратная абстракция на основе трейтов \textbf{embedded-hal} по принятым в Rust HAL подходам.
 \end{itemize}
 
 \medskip
@@ -213,8 +205,8 @@ API периферийного доступа для микроконтролл�
 
 \cvsection{Образование}
 
-\cvevent{Высшее образование}{МТУСИ, Бакалавриат}{Сентябрь 2022 -- Июнь 2026}{}
-Четвёртый курс направления: "Искусственный интеллект и машинное обучение"
+\cvevent{Бакалавриат}{МТУСИ}{Сентябрь 2022 -- Июнь 2027}{}
+Направление «Искусственный интеллект и машинное обучение», четвёртый курс.
 
 \smallskip
 \textbf{Фокус обучения:} алгоритмы, программная инженерия, ML/AI, DevOps и разработка интеллектуальных систем (CV/SLAM, обработка сигналов).
@@ -223,23 +215,23 @@ API периферийного доступа для микроконтролл�
 \cvsection{Навыки}
 \textbf{Языки:} \cvtag{Rust} \cvtag{C/C++} \cvtag{Python} \\
 \textbf{Встраиваемые платформы:} \cvtag{STM32} \cvtag{ESP32} \cvtag{Mik32} \cvtag{RPi}\\
-\textbf{Cреды выполнения:} \cvtag{Bare-metal} \cvtag{FreeRTOS} \cvtag{Embassy (async)} \newline \cvtag{Embedded Linux} \\
+\textbf{Среды выполнения:} \cvtag{Bare-metal} \cvtag{FreeRTOS} \cvtag{Embassy (async)} \newline \cvtag{Embedded Linux} \\
 \textbf{Коммуникации:} \cvtag{UART/SPI/I2C} \cvtag{SBUS/DSHOT} \cvtag{MAVLink} \\
-\textbf{Отладка и инструменты:} \cvtag{GDB} \cvtag{OpenOCD} \cvtag{JTAG/SWD} \cvtag{осциллограф} \cvtag{лог. анализатор} \\
+\textbf{Отладка и инструменты:} \cvtag{GDB} \cvtag{OpenOCD} \cvtag{JTAG/SWD} \newline \cvtag{осциллограф} \cvtag{лог. анализатор} \\
 
 
 
-\cvsection{Профессиональная \newline \smallskip активность}
+\cvsection{Активности}
 
 \begin{itemize}
-    \item Участвовал в студкемпе "Алиса и Умные устройства Яндекса"
+    \item Участвовал в студкемпе «Алиса и Умные устройства Яндекса»
     \item Получал стипендию Selectel Career Wave:
     \href{https://files.selectel.ru/docs/ru/careerwave_scholarship_finalists.pdf}{Список финалистов}
     
     \item \href{https://t.me/it_bash_forum/24}{Выступление на форуме IT-Bash}
 \end{itemize}
 
-\cvsection{Интересы и \newline \smallskip увлечения}
+\cvsection{Увлечения}
 \begin{itemize}
   \item Увлекаюсь единоборствами: занимаюсь грэпплингом и бразильским джиу-джитсу в клубе \href{https://combatgym.ru/}{Combat Gym}.
 \end{itemize}
