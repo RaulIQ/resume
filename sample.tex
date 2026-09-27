@@ -58,9 +58,9 @@
 \colorlet{body}{LightGrey}
 
 % Change some fonts, if necessary
-\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries\iftutex\addfontfeatures{Kerning=Off}\fi}
 \renewcommand{\personalinfofont}{\footnotesize}
-\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries\iftutex\addfontfeatures{Kerning=Off}\fi}
 \renewcommand{\cvsubsectionfont}{\large\bfseries}
 
 
@@ -198,8 +198,8 @@ API периферийного доступа для микроконтролл�
 
 \item \github{mik32-rs/mik32-hal}
 
-Предоставляет аппаратную абстракцию, опираясь на трейты \newline \smallskip \textbf{embedded‑hal} и следуя канонам разработки Rust HAL.
-
+Предоставляет аппаратную абстракцию, опираясь на трейты \newline \smallskip \textbf{embedded-hal} и следуя канонам разработки Rust HAL.
+\
 \end{itemize}
 
 \medskip

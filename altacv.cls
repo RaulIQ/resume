@@ -162,17 +162,17 @@
 \NewDocumentCommand{\printinfo}{m m o}{%
   \IfNoValueTF{#3}{%
     \mbox{\textcolor{accent}%
-    {\BeginAccSupp{method=escape,ActualText={\detokenize{#1}:}}\normalfont #1\EndAccSupp{}}%
+    {\BeginAccSupp{method=escape,ActualText={}}\normalfont #1\EndAccSupp{}}%
     ~\utffriendlydetokenize{#2}\hspace{2em}}%
   }{%
      \if@withhyper%
       \mbox{\textcolor{accent}%
-      {\BeginAccSupp{method=escape,ActualText={\detokenize{#1}:}}\normalfont #1\EndAccSupp{}}%
+      {\BeginAccSupp{method=escape,ActualText={}}\normalfont #1\EndAccSupp{}}%
       ~\href{#3}{\utffriendlydetokenize{#2}}\hspace{2em}}
      \else%
        \ClassWarning{Please specify [withhyper] option to enable hyperlinks. Printing out full hyperlink prefix #1 for now.}%
       \mbox{\textcolor{accent}
-      {\BeginAccSupp{method=escape,ActualText={\detokenize{#1}:}}\normalfont #1\EndAccSupp{}}%
+      {\BeginAccSupp{method=escape,ActualText={}}\normalfont #1\EndAccSupp{}}%
       ~{\utffriendlydetokenize{#3#2}}\hspace{2em}}%
      \fi%
   }%
@@ -325,12 +325,12 @@
   \smallskip}
   \ifstrequal{#3}{}{}{%
     {\small\makebox[0.5\linewidth][l]%
-      {\BeginAccSupp{method=pdfstringdef,ActualText={\datename:}}\cvDateMarker\EndAccSupp{}%
+      {\BeginAccSupp{method=pdfstringdef,ActualText={}}\cvDateMarker\EndAccSupp{}%
       ~#3}%
     }}%
   \ifstrequal{#4}{}{}{%
     {\small\makebox[0.5\linewidth][l]%
-      {\BeginAccSupp{method=pdfstringdef,ActualText={\locationname:}}\cvLocationMarker\EndAccSupp{}%
+      {\BeginAccSupp{method=pdfstringdef,ActualText={}}\cvLocationMarker\EndAccSupp{}%
         ~#4}%
     }}\par
   \medskip\normalsize
