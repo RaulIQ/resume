@@ -19,7 +19,7 @@
 %% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/simpleicons for full list of symbols.
 
 % Change the page layout if you need to
-\geometry{left=1.25cm,right=1.25cm,top=0.5cm,bottom=1cm,columnsep=1.2cm}
+\geometry{left=1.25cm,right=1.25cm,top=1.25cm,bottom=1cm,columnsep=1.2cm}
 
 % The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
@@ -100,7 +100,7 @@
 }
 
 % Tighter lists
-\setlist{itemsep=0.1\baselineskip,after=\vspace{0.1\baselineskip}}
+\setlist{itemsep=0.5\baselineskip,after=\vspace{0.1\baselineskip}}
 
 %% sample.bib contains your publications
 \addbibresource{sample.bib}
@@ -157,7 +157,7 @@
   \cvevent{Программист встраиваемых систем}{ЮВС Авиа (концерн «Калашников») · Сентябрь 2025 — настоящее время}{}{}
 
   \begin{itemize}
-    \item \textbf{Система управления батареей (BMS)} (\textbf{C++}, ESP32-S3, \textbf{FreeRTOS}, собственные платы): разработал логику заряда (BQ25792), мониторинга состояния (BQ40Z50) и питания нагрузки (TPS55288), драйверы по datasheet; реализовал \textbf{SMBus} поверх \textbf{I2C multi-master} для доступа полётного контроллера и режим энергосбережения. Участвовал в \textbf{bring-up} плат, настроил параметры BQ40Z50 и BQ25792 в bqStudio.
+    \item \textbf{Система управления батареей (BMS)} (\textbf{C++}, ESP32-S3, \textbf{FreeRTOS}, собственные платы): разработал логику заряда (BQ25792), мониторинга состояния (BQ40Z50) и питания нагрузки (TPS55288), драйверы по datasheet; реализовал \textbf{SMBus} поверх \textbf{I2C multi-master} для доступа полётного контроллера и режим энергосбережения. Участвовал в \textbf{bring-up} плат, настроил параметры BQ40Z50 в bqStudio.
     \item Разработал \textbf{ППРЧ} для связи дрона с наземной станцией по \textbf{UDP} на \textbf{Embedded Linux} (Raspberry Pi, wfb-ng, RTL8812EU): 10 прыжков/с по 42 каналам, псевдослучайная последовательность на SHA-256, синхронизация узлов через Chrony (<1 мс), смена канала через procfs драйвера.
     \item Реализовал \textbf{Bidirectional DSHOT} на \textbf{C} для STM32F7: чтение оборотов моторов без отдельного датчика. \newline \github{RaulIQ/bit-banging-bidir-dshot}
     \item Разработал на \textbf{C} (ESP-IDF, FreeRTOS) двунаправленный UART-мост MAVLink для ESP32-C3/S3 с шифрованием \textbf{AES-128-CTR}: аппаратная и программная реализации, замер времени расшифровки.
