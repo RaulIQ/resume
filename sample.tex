@@ -157,10 +157,7 @@
 \cvevent{Программист встраиваемых систем}{ЮВС Авиа (концерн «Калашников») · Сентябрь 2025 — настоящее время}{}{}
 
 \begin{itemize}
-  \item Разрабатываю прошивку \textbf{BMS умной батареи для коптера} на \textbf{C++23} (ESP32-S3, FreeRTOS): драйверы \textbf{BQ40Z50}, \textbf{BQ25792}, \textbf{TPS55288}.
-  \item Реализовал \textbf{I2C multi-master}: полётный контроллер читает батарею по SMBus параллельно с ESP32.
-  \item Снижаю энергопотребление через auto light sleep (в работе).
-  \item \textbf{Bring-up} собственных плат вместе со схемотехниками; настройка BQ40Z50 и BQ25792 в bqStudio.
+  \item \textbf{Умная батарея для коптера} (\textbf{C++23}, ESP32-S3, \textbf{FreeRTOS}, собственные платы): разработал логику заряда (BQ25792), мониторинга состояния (BQ40Z50) и питания нагрузки (TPS55288), драйверы по datasheet; реализовал \textbf{SMBus} поверх \textbf{I2C multi-master} для доступа полётного контроллера и режим энергосбережения на light sleep. Участвовал в \textbf{bring-up} плат, настроил параметры BQ40Z50 и BQ25792 в bqStudio.
   \item Разработал на \textbf{Python} \textbf{ППРЧ} для связи дрона с наземной станцией на \textbf{Embedded Linux} (Raspberry Pi, wfb-ng, RTL8812EU): 10 прыжков/с по 42 каналам 5 ГГц, псевдослучайная последовательность на SHA-256, синхронизация узлов через Chrony (<1 мс), смена канала через procfs драйвера.
   \item Спроектировал протокол узлов поверх \textbf{UDP} (heartbeat, handshake, команды) и машину состояний с автовосстановлением связи; адаптивная смена канала по метрикам ошибок видеопотока из JSON API wfb-ng (\textbf{TCP}); управление через REST API (FastAPI).
   \item Реализовал \textbf{Bidirectional DSHOT} на \textbf{C} для STM32F7: чтение оборотов моторов без отдельного датчика. \newline \github{RaulIQ/bit-banging-bidir-dshot}
