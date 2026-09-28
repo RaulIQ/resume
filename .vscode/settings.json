@@ -1,12 +1,23 @@
 {
   "latex-workshop.latex.recipes": [
-    { "name": "latexmk (lualatex)", "tools": ["latexmk-lua"] }
+    {
+      "name": "latexmk (lualatex)",
+      "tools": [
+        "latexmk-lua"
+      ]
+    }
   ],
   "latex-workshop.latex.tools": [
     {
       "name": "latexmk-lua",
       "command": "latexmk",
-      "args": ["-lualatex", "-synctex=1", "-interaction=nonstopmode", "-file-line-error", "%DOC%"]
+      "args": [
+        "-lualatex",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
     }
   ],
   "latex-workshop.latex.autoBuild.run": "onSave",
