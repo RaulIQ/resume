@@ -19,7 +19,7 @@
 %% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/simpleicons for full list of symbols.
 
 % Change the page layout if you need to
-\geometry{left=1.25cm,right=1.25cm,top=0.5cm,bottom=1.5cm,columnsep=1.2cm}
+\geometry{left=1.25cm,right=1.25cm,top=0.5cm,bottom=1cm,columnsep=1.2cm}
 
 % The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
@@ -60,7 +60,7 @@
 % Change some fonts, if necessary
 \renewcommand{\namefont}{\Huge\rmfamily\bfseries\iftutex\addfontfeatures{Kerning=Off}\fi}
 \renewcommand{\personalinfofont}{\footnotesize}
-\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries\iftutex\addfontfeatures{Kerning=Off}\fi}
+\renewcommand{\cvsectionfont}{\Large\rmfamily\bfseries\iftutex\addfontfeatures{Kerning=Off}\fi}
 \renewcommand{\cvsubsectionfont}{\large\bfseries}
 
 
@@ -91,6 +91,16 @@
 %% want an originally numerical reference style like IEEE
 %% for your publication list
 \input{pubs-num.tex}
+
+% Tighter section spacing
+\renewcommand{\cvsection}[1]{%
+  \nointerlineskip\medskip%
+  {\color{heading}\cvsectionfont\MakeUppercase{#1}}\\[-1ex]%
+  {\color{headingrule}\rule{\linewidth}{2pt}\par}\smallskip
+}
+
+% Tighter lists
+\setlist{itemsep=0.1\baselineskip,after=\vspace{0.1\baselineskip}}
 
 %% sample.bib contains your publications
 \addbibresource{sample.bib}
@@ -133,38 +143,36 @@
 
 \makecvheader
 %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
-% \AtBeginEnvironment{itemize}{\small}
+\AtBeginEnvironment{itemize}{\small}
 
-%% Set the left/right column width ratio to 6:4.
+%% Set the left/right column width ratio.
 \columnratio{0.65}
 
 % Start a 2-column paracol. Both the left and right columns will automatically
 % break across pages if things get too long.
 \begin{paracol}{2}
 
-
 \cvsection{Опыт работы}
 
-\cvevent{Программист встраиваемых систем}{ЮВС Авиа (концерн «Калашников»)}{Сентябрь 2025 — настоящее время}{}
+\cvevent{Программист встраиваемых систем}{ЮВС Авиа (концерн «Калашников») · Сентябрь 2025 — настоящее время}{}{}
 
 \begin{itemize}
-  \item Разработал \textbf{ППРЧ} для связи по \textbf{UDP} через Wi-Fi на \textbf{Embedded Linux} (Raspberry Pi, RTL8812EU): переключение каналов Wi-Fi 10 раз в секунду для устойчивости к РЭБ.
-  \item Реализовал \textbf{Bidirectional DSHOT} на \textbf{C} для STM32F7: чтение оборотов моторов без отдельного датчика.
-
-  \github{RaulIQ/bit-banging-bidir-dshot}
-  \item Разработал на \textbf{C} (ESP-IDF, \textbf{FreeRTOS}) двунаправленный UART-мост MAVLink для ESP32-C3/S3 с шифрованием \textbf{AES-128-CTR}: аппаратная и программная реализации, замер времени расшифровки.
+  \item Разрабатываю прошивку \textbf{BMS умной батареи для коптера} на \textbf{C++23} (ESP32-S3, FreeRTOS): драйверы \textbf{BQ40Z50}, \textbf{BQ25792}, \textbf{TPS55288}.
+  \item Реализовал \textbf{I2C multi-master}: полётный контроллер читает батарею по SMBus параллельно с ESP32.
+  \item Снижаю энергопотребление через auto light sleep (в работе).
+  \item \textbf{Bring-up} собственных плат вместе со схемотехниками; настройка BQ40Z50 и BQ25792 в bqStudio.
+  \item Разработал на \textbf{Python} \textbf{ППРЧ} для связи дрона с наземной станцией на \textbf{Embedded Linux} (Raspberry Pi, wfb-ng, RTL8812EU): 10 прыжков/с по 42 каналам 5 ГГц, псевдослучайная последовательность на SHA-256, синхронизация узлов через Chrony (<1 мс), смена канала через procfs драйвера.
+  \item Спроектировал протокол узлов поверх \textbf{UDP} (heartbeat, handshake, команды) и машину состояний с автовосстановлением связи; адаптивная смена канала по метрикам ошибок видеопотока из JSON API wfb-ng (\textbf{TCP}); управление через REST API (FastAPI).
+  \item Реализовал \textbf{Bidirectional DSHOT} на \textbf{C} для STM32F7: чтение оборотов моторов без отдельного датчика. \newline \github{RaulIQ/bit-banging-bidir-dshot}
+  \item Разработал на \textbf{C} (ESP-IDF, FreeRTOS) двунаправленный UART-мост MAVLink для ESP32-C3/S3 с шифрованием \textbf{AES-128-CTR}: аппаратная и программная реализации, замер времени расшифровки.
   \item Написал на \textbf{Python} \textbf{HIL-тест} моста: ПК через два USB-UART прогоняет поток MAVLink через пару ESP32, сверяет кадры байт-в-байт и порядок seq, измеряет потери и задержку под нагрузкой.
 \end{itemize}
 
-\cvevent{Лаборант Центра БПЛА}{МТУСИ}{Март 2024 — Сентябрь 2025}{}
+\cvevent{Лаборант Центра БПЛА}{МТУСИ · Март 2024 — Сентябрь 2025}{}{}
 \begin{itemize}
-  \item Реализовал протокол \textbf{DSHOT} для управления моторами.
-
-  \github{RaulIQ/waveform_example}
+  \item Реализовал протокол \textbf{DSHOT} для управления моторами. \newline \github{RaulIQ/waveform_example}
   \item В команде писал полётную прошивку с нуля: режимы Acro и Stab на \textbf{PID-регуляторах}, обработка данных \textbf{IMU} цифровыми фильтрами, ориентация на кватернионах.
-  \item Разработал систему \textbf{бортовой телеметрии и диагностики} («чёрный ящик»): запись полётных данных на SPI-flash в собственном формате. Добавил async API в форк spi-memory, чтобы запись не блокировала другие задачи.
-
-  \github{RaulIQ/spi-memory-async}
+  \item Разработал систему \textbf{бортовой телеметрии и диагностики} («чёрный ящик»): запись полётных данных на SPI-flash в собственном формате. Добавил неблокирующий async API в форк spi-memory. \newline \github{RaulIQ/spi-memory-async}
 \end{itemize}
 
 \cvsection{Open Source}
@@ -179,57 +187,38 @@
 
 \cvsection{Проекты}
 
-\cvevent{mik32-rs}{Bring-up российского RISC-V микроконтроллера MIK32 «Амур» по документации: первые runtime, PAC и HAL на Rust}{}{}
-
+\cvevent{mik32-rs}{Bring-up RISC-V микроконтроллера MIK32 «Амур» по документации: первые runtime, PAC и HAL на Rust}{}{}
 \github{mik32-rs/mik32-rt} \github{mik32-rs/mik32v2-pac} \newline \github{mik32-rs/mik32-hal}
 
-\medskip
-
-% use ONLY \newpage if you want to force a page break for
-% ONLY the current column
-
-%% Switch to the right column. This will now automatically move to the second
-%% page if the content is too long.
+%% Switch to the right column.
 \switchcolumn
+
+\cvsection{Навыки}
+\textbf{Языки:} \cvtag{C++23} \cvtag{C} \cvtag{Rust} \newline \cvtag{Python} \\
+\textbf{Платформы:} \cvtag{ESP32} \cvtag{STM32} \cvtag{Mik32} \cvtag{RPi} \\
+\textbf{Архитектуры:} \cvtag{ARM Cortex-M} \newline \cvtag{RISC-V} \cvtag{Xtensa} \\
+\textbf{Периферия:} \cvtag{DMA} \cvtag{таймеры} \cvtag{прерывания} \\
+\textbf{Среды выполнения:} \cvtag{FreeRTOS} \cvtag{Bare-metal} \newline \cvtag{Embedded Linux} \cvtag{Embassy} \\
+\textbf{Интерфейсы:} \cvtag{I2C multi-master} \cvtag{SMBus} \newline \cvtag{UART/SPI} \cvtag{SBUS/DSHOT} \\
+\textbf{Сети и связь:} \cvtag{UDP/TCP} \cvtag{Wi-Fi} \cvtag{MAVLink} \\
+\textbf{Питание:} \cvtag{BQ40Z50} \cvtag{BQ25792} \newline \cvtag{TPS55288} \cvtag{bqStudio} \\
+\textbf{Тестирование:} \cvtag{Unity} \cvtag{HIL-стенды} \newline \cvtag{pymavlink} \\
+\textbf{Отладка:} \cvtag{GDB} \cvtag{OpenOCD} \newline \cvtag{JTAG/SWD} \cvtag{осциллограф} \newline \cvtag{лог. анализатор}
 
 \cvsection{Образование}
 
-\cvevent{Бакалавриат}{МТУСИ}{Сентябрь 2022 -- Июнь 2027}{}
-Направление «Искусственный интеллект и машинное обучение», четвёртый курс.
+\textbf{Бакалавриат, МТУСИ} (2022 -- 2027): «Искусственный интеллект и машинное обучение».
 
 \smallskip
-\textbf{Фокус обучения:} алгоритмы, программная инженерия, ML/AI, DevOps и разработка интеллектуальных систем (CV/SLAM, обработка сигналов).
-
-
-\cvsection{Навыки}
-\textbf{Языки:} \cvtag{C/C++} \cvtag{Rust} \cvtag{Python} \\
-\textbf{Встраиваемые платформы:} \cvtag{STM32} \cvtag{ESP32} \cvtag{Mik32} \cvtag{RPi}\\
-\textbf{Архитектуры:} \cvtag{ARM Cortex-M} \newline \cvtag{RISC-V} \\
-\textbf{Периферия:} \cvtag{DMA} \cvtag{таймеры} \cvtag{прерывания} \\
-\textbf{Среды выполнения:} \cvtag{Bare-metal} \cvtag{FreeRTOS} \cvtag{Embassy (async)} \newline \cvtag{Embedded Linux} \\
-\textbf{Сети и связь:} \cvtag{UDP} \cvtag{Wi-Fi} \cvtag{MAVLink} \\
-\textbf{Интерфейсы:} \cvtag{UART/SPI/I2C} \cvtag{SBUS/DSHOT} \\
-\textbf{Тестирование:} \cvtag{HIL-стенды} \cvtag{pymavlink} \\
-\textbf{Отладка и инструменты:} \cvtag{GDB} \cvtag{OpenOCD} \cvtag{JTAG/SWD} \newline \cvtag{осциллограф} \cvtag{лог. анализатор} \\
-
-
+\textbf{Фокус:} алгоритмы, программная инженерия, ML/AI, DevOps, интеллектуальные системы (CV/SLAM, обработка сигналов).
 
 \cvsection{Активности}
-
 \begin{itemize}
-    \item Участвовал в студкемпе «Алиса и Умные устройства Яндекса»
-    \item \href{https://files.selectel.ru/docs/ru/careerwave_scholarship_finalists.pdf}{Стипендиат Selectel Career Wave}
-    
-    \item \href{https://t.me/it_bash_forum/24}{Выступление на форуме IT-Bash}
-\end{itemize}
-
-\cvsection{Увлечения}
-\begin{itemize}
-  \item Увлекаюсь единоборствами: занимаюсь грэпплингом и бразильским джиу-джитсу в клубе \href{https://combatgym.ru/}{Combat Gym}.
+  \item Студкемп «Алиса и Умные устройства Яндекса»
+  \item \href{https://files.selectel.ru/docs/ru/careerwave_scholarship_finalists.pdf}{Стипендиат Selectel Career Wave}
+  \item \href{https://t.me/it_bash_forum/24}{Выступление на форуме IT-Bash}
 \end{itemize}
 
 \end{paracol}
-
-
 
 \end{document}
