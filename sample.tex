@@ -97,7 +97,7 @@
 % \usepackage{academicons}\let\faOrcid\aiOrcid
 \begin{document}
 \name{Рауль Алимбеков}
-\tagline{Embedded Developer}
+\tagline{Разработчик бортовых систем · C++ / Embedded Linux}
 %% You can add multiple photos on the left or right
 \photoR{2.8cm}{photo}
 % \photoL{2.5cm}{Yacht_High,Suitcase_High}
@@ -148,11 +148,12 @@
 \cvevent{Программист встраиваемых систем}{ЮВС Авиа (концерн «Калашников»)}{Сентябрь 2025 — настоящее время}{}
 
 \begin{itemize}
-  \item Разработал \textbf{ППРЧ} для связи по \textbf{UDP} через Wi-Fi на Embedded Linux (Raspberry Pi, RTL8812EU): переключение каналов Wi-Fi 10 раз в секунду для устойчивости к РЭБ.
+  \item Разработал \textbf{ППРЧ} для связи по \textbf{UDP} через Wi-Fi на \textbf{Embedded Linux} (Raspberry Pi, RTL8812EU): переключение каналов Wi-Fi 10 раз в секунду для устойчивости к РЭБ.
   \item Реализовал \textbf{Bidirectional DSHOT} на \textbf{C} для STM32F7: чтение оборотов моторов без отдельного датчика.
 
   \github{RaulIQ/bit-banging-bidir-dshot}
-  \item Разработал на \textbf{C++} мост MAVLink для ESP32 с аппаратным шифрованием \textbf{AES-128}.
+  \item Разработал на \textbf{C} (ESP-IDF, \textbf{FreeRTOS}) двунаправленный UART-мост MAVLink для ESP32-C3/S3 с шифрованием \textbf{AES-128-CTR}: аппаратная и программная реализации, замер времени расшифровки.
+  \item Написал на \textbf{Python} \textbf{HIL-тест} моста: ПК через два USB-UART прогоняет поток MAVLink через пару ESP32, сверяет кадры байт-в-байт и порядок seq, измеряет потери и задержку под нагрузкой.
 \end{itemize}
 
 \cvevent{Лаборант Центра БПЛА}{МТУСИ}{Март 2024 — Сентябрь 2025}{}
@@ -160,7 +161,7 @@
   \item Реализовал протокол \textbf{DSHOT} для управления моторами.
 
   \github{RaulIQ/waveform_example}
-  \item В команде писал полётную прошивку с нуля: режимы Acro и Stab на \textbf{PID-регуляторах}, цифровых фильтрах и кватернионах.
+  \item В команде писал полётную прошивку с нуля: режимы Acro и Stab на \textbf{PID-регуляторах}, обработка данных \textbf{IMU} цифровыми фильтрами, ориентация на кватернионах.
   \item Разработал систему \textbf{бортовой телеметрии и диагностики} («чёрный ящик»): запись полётных данных на SPI-flash в собственном формате. Добавил async API в форк spi-memory, чтобы запись не блокировала другие задачи.
 
   \github{RaulIQ/spi-memory-async}
@@ -178,21 +179,9 @@
 
 \cvsection{Проекты}
 
-\cvevent{mik32-rs}{Первая поддержка Rust для российского RISC-V микроконтроллера MIK32 «Амур»}{}{}
+\cvevent{mik32-rs}{Bring-up российского RISC-V микроконтроллера MIK32 «Амур» по документации: первые runtime, PAC и HAL на Rust}{}{}
 
-\begin{itemize}
-\item \github{mik32-rs/mik32-rt}
-
-Стартовый код и минимальный runtime: позволяет писать и собирать прошивки для MIK32 на \textbf{Rust}.
-
-\item \github{mik32-rs/mik32v2-pac}
-
-API доступа к периферии (PAC) для MIK32v2.
-
-\item \github{mik32-rs/mik32-hal}
-
-Аппаратная абстракция на основе трейтов \textbf{embedded-hal} по принятым в Rust HAL подходам.
-\end{itemize}
+\github{mik32-rs/mik32-rt} \github{mik32-rs/mik32v2-pac} \newline \github{mik32-rs/mik32-hal}
 
 \medskip
 
@@ -213,12 +202,14 @@ API доступа к периферии (PAC) для MIK32v2.
 
 
 \cvsection{Навыки}
-\textbf{Языки:} \cvtag{Rust} \cvtag{C/C++} \cvtag{Python} \\
+\textbf{Языки:} \cvtag{C/C++} \cvtag{Rust} \cvtag{Python} \\
 \textbf{Встраиваемые платформы:} \cvtag{STM32} \cvtag{ESP32} \cvtag{Mik32} \cvtag{RPi}\\
 \textbf{Архитектуры:} \cvtag{ARM Cortex-M} \newline \cvtag{RISC-V} \\
 \textbf{Периферия:} \cvtag{DMA} \cvtag{таймеры} \cvtag{прерывания} \\
 \textbf{Среды выполнения:} \cvtag{Bare-metal} \cvtag{FreeRTOS} \cvtag{Embassy (async)} \newline \cvtag{Embedded Linux} \\
-\textbf{Коммуникации:} \cvtag{UART/SPI/I2C} \cvtag{SBUS/DSHOT} \cvtag{MAVLink} \\
+\textbf{Сети и связь:} \cvtag{UDP} \cvtag{Wi-Fi} \cvtag{MAVLink} \\
+\textbf{Интерфейсы:} \cvtag{UART/SPI/I2C} \cvtag{SBUS/DSHOT} \\
+\textbf{Тестирование:} \cvtag{HIL-стенды} \cvtag{pymavlink} \\
 \textbf{Отладка и инструменты:} \cvtag{GDB} \cvtag{OpenOCD} \cvtag{JTAG/SWD} \newline \cvtag{осциллограф} \cvtag{лог. анализатор} \\
 
 
