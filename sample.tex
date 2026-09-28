@@ -157,7 +157,7 @@
   \cvevent{Программист встраиваемых систем}{ЮВС Авиа (концерн «Калашников») · Сентябрь 2025 — настоящее время}{}{}
 
   \begin{itemize}
-    \item \textbf{Система управления батареей (BMS)} (\textbf{C++}, ESP32-S3, \textbf{FreeRTOS}, собственные платы): разработал логику заряда (BQ25792), мониторинга состояния (BQ40Z50) и питания нагрузки (TPS55288), драйверы по datasheet; реализовал \textbf{SMBus} поверх \textbf{I2C multi-master} для доступа полётного контроллера и режим энергосбережения. Участвовал в \textbf{bring-up} плат, настраивал параметры BQ40Z50 в bqStudio.
+    \item \textbf{Система управления батареей (BMS)} (\textbf{C++}, ESP32-S3, \textbf{FreeRTOS}, собственные платы): разработал логику заряда (BQ25792), мониторинга состояния (BQ40Z50) и питания нагрузки (TPS55288), драйверы по datasheet; реализовал \textbf{SMBus} поверх \textbf{I2C multi-master} для доступа полётного контроллера к данным батареи и режим энергосбережения. Участвовал в \textbf{bring-up} плат, настраивал параметры BQ40Z50 в bqStudio.
     \item Разработал \textbf{ППРЧ} для связи дрона с наземной станцией по \textbf{UDP} на \textbf{Embedded Linux} (Raspberry Pi, wfb-ng, RTL8812EU): 10 прыжков/с по 42 каналам, псевдослучайная последовательность на SHA-256, синхронизация узлов через Chrony (<1 мс), смена канала через procfs драйвера.
     \item Реализовал \textbf{Bidirectional DSHOT} на \textbf{C} для STM32F7: чтение оборотов моторов без отдельного датчика. \newline \github{RaulIQ/bit-banging-bidir-dshot}
     \item Разработал на \textbf{C} (ESP-IDF, FreeRTOS) двунаправленный UART-мост MAVLink для ESP32-C3/S3 с шифрованием \textbf{AES-128-CTR}: аппаратная и программная реализации, замер времени расшифровки.
@@ -166,7 +166,7 @@
   \cvevent{Лаборант Центра БПЛА}{МТУСИ · Март 2024 — Сентябрь 2025}{}{}
   \begin{itemize}
     \item Реализовал протокол \textbf{DSHOT} для управления моторами. \newline \github{RaulIQ/waveform_example}
-    \item В команде писал полётную прошивку с нуля: режимы Acro и Stab на \textbf{PID-регуляторах}, обработка данных \textbf{IMU} цифровыми фильтрами, ориентация на кватернионах.
+    \item В команде писал полётную прошивку с нуля: режимы Acro и Stab на \textbf{PID-регуляторах}, обработка данных \textbf{IMU} цифровыми фильтрами, расчёт ориентации на кватернионах.
     \item Разработал систему \textbf{бортовой телеметрии и диагностики} («чёрный ящик»): запись полётных данных на SPI-flash в собственном формате. Добавил неблокирующий async API в форк spi-memory. \newline \github{RaulIQ/spi-memory-async}
   \end{itemize}
 
@@ -199,7 +199,7 @@
 
   \cvsection{Навыки}
   \textbf{Языки:} \cvtag{C++} \cvtag{C} \cvtag{Rust} \newline \cvtag{Python} \\
-  \textbf{Платформы:} \cvtag{ESP32} \cvtag{STM32} \cvtag{Mik32} \cvtag{RPi} \\
+  \textbf{Платформы:} \cvtag{ESP32} \cvtag{STM32} \cvtag{RPi} \\
   \textbf{Периферия:} \cvtag{DMA} \cvtag{таймеры} \cvtag{прерывания} \\
   \textbf{Среды выполнения:} \cvtag{FreeRTOS} \cvtag{Bare-metal} \newline \cvtag{Embedded Linux} \cvtag{Embassy} \\
   \textbf{Интерфейсы:} \cvtag{SMBus} \newline \cvtag{I2C/UART/SPI} \cvtag{SBUS/DSHOT} \\
@@ -207,7 +207,7 @@
 
   \cvsection{Активности}
   \begin{itemize}
-    \item Студкемп «Алиса и Умные устройства Яндекса»
+    \item Студкемп «Алиса и умные устройства Яндекса»
     \item \href{https://files.selectel.ru/docs/ru/careerwave_scholarship_finalists.pdf}{Стипендиат Selectel Career Wave}
     \item \href{https://t.me/it_bash_forum/24}{Выступление на форуме IT-Bash}
   \end{itemize}
