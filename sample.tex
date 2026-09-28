@@ -157,7 +157,7 @@
   \cvevent{Программист встраиваемых систем}{ЮВС Авиа (концерн «Калашников») · Сентябрь 2025 — настоящее время}{}{}
 
   \begin{itemize}
-    \item \textbf{Система управления батареей (BMS)} (\textbf{C++}, ESP32-S3, \textbf{FreeRTOS}, собственные платы): разработал логику заряда (BQ25792), мониторинга состояния (BQ40Z50) и питания нагрузки (TPS55288), драйверы по datasheet; реализовал \textbf{SMBus} поверх \textbf{I2C multi-master} для доступа полётного контроллера и режим энергосбережения. Участвовал в \textbf{bring-up} плат, настроил параметры BQ40Z50 в bqStudio.
+    \item \textbf{Система управления батареей (BMS)} (\textbf{C++}, ESP32-S3, \textbf{FreeRTOS}, собственные платы): разработал логику заряда (BQ25792), мониторинга состояния (BQ40Z50) и питания нагрузки (TPS55288), драйверы по datasheet; реализовал \textbf{SMBus} поверх \textbf{I2C multi-master} для доступа полётного контроллера и режим энергосбережения. Участвовал в \textbf{bring-up} плат, настраивал параметры BQ40Z50 в bqStudio.
     \item Разработал \textbf{ППРЧ} для связи дрона с наземной станцией по \textbf{UDP} на \textbf{Embedded Linux} (Raspberry Pi, wfb-ng, RTL8812EU): 10 прыжков/с по 42 каналам, псевдослучайная последовательность на SHA-256, синхронизация узлов через Chrony (<1 мс), смена канала через procfs драйвера.
     \item Реализовал \textbf{Bidirectional DSHOT} на \textbf{C} для STM32F7: чтение оборотов моторов без отдельного датчика. \newline \github{RaulIQ/bit-banging-bidir-dshot}
     \item Разработал на \textbf{C} (ESP-IDF, FreeRTOS) двунаправленный UART-мост MAVLink для ESP32-C3/S3 с шифрованием \textbf{AES-128-CTR}: аппаратная и программная реализации, замер времени расшифровки.
@@ -200,7 +200,6 @@
   \cvsection{Навыки}
   \textbf{Языки:} \cvtag{C++} \cvtag{C} \cvtag{Rust} \newline \cvtag{Python} \\
   \textbf{Платформы:} \cvtag{ESP32} \cvtag{STM32} \cvtag{Mik32} \cvtag{RPi} \\
-  \textbf{Архитектуры:} \cvtag{ARM Cortex-M} \newline \cvtag{RISC-V} \\
   \textbf{Периферия:} \cvtag{DMA} \cvtag{таймеры} \cvtag{прерывания} \\
   \textbf{Среды выполнения:} \cvtag{FreeRTOS} \cvtag{Bare-metal} \newline \cvtag{Embedded Linux} \cvtag{Embassy} \\
   \textbf{Интерфейсы:} \cvtag{SMBus} \newline \cvtag{I2C/UART/SPI} \cvtag{SBUS/DSHOT} \\
